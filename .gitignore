@@ -1,1 +1,10 @@
 .env
+Objects/
+Listings/
+*.uvgui.*
+*.uvopt
+*.hex
+*.axf
+*.obj
+*.lst
+*.m51

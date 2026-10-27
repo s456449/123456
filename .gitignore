@@ -1,7 +1,9 @@
 .env
 Objects/
 Listings/
+*.uvgui.*
 *.uvguix.*
+*.uvopt
 *.uvoptx
 *.hex
 *.axf

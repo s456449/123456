@@ -689,25 +689,30 @@
               <FileType>5</FileType>
               <FilePath>.\system\Delay.h</FilePath>
             </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>hardware</GroupName>
+          <Files>
             <File>
               <FileName>Key.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\system\Key.c</FilePath>
+              <FilePath>.\hardware\Key.c</FilePath>
             </File>
             <File>
               <FileName>Key.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\system\Key.h</FilePath>
+              <FilePath>.\hardware\Key.h</FilePath>
             </File>
             <File>
               <FileName>LED.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\system\LED.c</FilePath>
+              <FilePath>.\hardware\LED.c</FilePath>
             </File>
             <File>
               <FileName>LED.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\system\LED.h</FilePath>
+              <FilePath>.\hardware\LED.h</FilePath>
             </File>
           </Files>
         </Group>

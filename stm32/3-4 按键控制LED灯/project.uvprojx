@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\start;.\user;.\library;.\system</IncludePath>
+              <IncludePath>.\start;.\user;.\library;.\system;.\Hardware</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>

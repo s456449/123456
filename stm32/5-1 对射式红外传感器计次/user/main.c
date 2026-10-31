@@ -6,6 +6,7 @@
 unsigned int CountNum=0,Temp;
 int main(void)
 {
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
 	CountSensor_Init();
 	OLED_Init();
 	Buzzer_Init();

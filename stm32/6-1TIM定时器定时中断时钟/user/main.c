@@ -11,7 +11,7 @@ int main(void)
 	OLED_ShowString(2,3,".  .  .");
 	OLED_ShowNum(2,1,hour,2);
 	OLED_ShowNum(2,4,min,2);
-	OLED_ShowNum(2,7,sec,2);;
+	OLED_ShowNum(2,7,sec,2);
 	OLED_ShowNum(2,10,minsec,2);
 	while(1)
 	{

@@ -22,6 +22,32 @@ unsigned char Key_GetState()
 
 void Key_Update(void)
 {
+    static unsigned char NowState=0;    /* 本次采样 */
+    static unsigned char Stable  =0;    /* 已确认的稳定状态 */
+    static unsigned char Count   =0;    /* 连续一致次数 */
+    unsigned char s=Key_GetState();
+	
+    if(s==NowState)
+    {
+        if(Count<3) Count++;            /* 3 × 2ms = 6ms 一致才算数 */
+    }
+    else
+    {
+        NowState=s;
+        Count=0;
+    }
+
+    if(Count>=3 && NowState!=Stable)
+    {
+        if(Stable!= 0 && NowState==0)  /* 松手沿 */
+        {
+            Key_KeyNumber=Stable;
+        }
+        Stable=NowState;
+    }
+}
+/*  前代码，问题：P3.2误触发。
+	static unsigned char NowState=0,Stable=0,Count=0;
 	static unsigned char LastState,NowState;
 	LastState=NowState;
 	NowState=Key_GetState();
@@ -35,8 +61,7 @@ void Key_Update(void)
 		{Key_KeyNumber=3;}
 		if(LastState==4 && NowState==0)
 		{Key_KeyNumber=4;}
-	}
-}
+	}*/
 
 unsigned char Key()
 {

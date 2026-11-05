@@ -14,12 +14,12 @@ void main()
 	shumaguan_SetBuf(1,Speed);
 	while(1)
 	{
-		KeyNum=P3key();
+		KeyNum=Key();
 		if(KeyNum)
 		{
 			if(KeyNum==1&Speed!=0){Speed--;}
 			if(KeyNum==2&Speed<3){Speed++;}
-			if(KeyNum==3){Speed=0;}
+//			if(KeyNum==3){Speed=0;}
 			if(KeyNum==4){Speed++;if(Speed>3){Speed=0;}}
 			if(Speed==0){Compare=0;}
 			if(Speed==1){Compare=50;}
@@ -32,16 +32,17 @@ void main()
 }
 void Timer0_Routine() interrupt 1
 {
-	TL0=0x66;
-	TH0=0xFC;
+	TL0=0xA4;
+	TH0=0xFF;//0.1ms
 	T0count1++;
-	if(T0count1>=2)
+	if(T0count1>=20)//2ms
 	{
 		T0count1=0;
+		Key_Update();
 		shumaguan_Loop();
 	}
 	T0count2++;
-	if(T0count2>=100){T0count2=0;}
+	if(T0count2>=100){T0count2=0;}//10ms
 	if(T0count2<Compare&Motor==0){Motor=1;}
 	if(T0count2>=Compare&Motor==1){Motor=0;}
 }

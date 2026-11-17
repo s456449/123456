@@ -30,7 +30,6 @@ void IC_Init(void)
 	TIM_ICInitStructure.TIM_Channel=TIM_Channel_1;
 	TIM_ICInitStructure.TIM_ICFilter=0xF;
 	TIM_ICInitStructure.TIM_ICPolarity=TIM_ICPolarity_Rising;
-	TIM_ICInitStructure.TIM_ICFilter=TIM_ICPSC_DIV1;
 	TIM_ICInitStructure.TIM_ICSelection=TIM_ICSelection_DirectTI;
 	TIM_ICInit(TIM3, &TIM_ICInitStructure);
 	

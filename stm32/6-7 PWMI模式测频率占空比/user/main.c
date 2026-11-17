@@ -12,9 +12,9 @@ int main(void)
 	IC_Init();
 	PWM_Init();
 	Key_Init();
-	OLED_ShowString(1,1,"Freq:     Hz");
-	OLED_ShowString(2,1,"Duty:     %");
-	OLED_ShowString(3,1,"Compare:  %");
+	OLED_ShowString(1,1,"Freq:      Hz");
+	OLED_ShowString(2,1,"Duty:      %");
+	OLED_ShowString(3,1,"Compare:   %");
 	PWM_SetPrescaler(720-1);
 	PWM_SetCompare1(i);
 	while(1)
@@ -22,14 +22,14 @@ int main(void)
 		KeyNum=Key_GetNum();
 		if(KeyNum)
 		{
-			if(KeyNum==1&&i>=20){i-=10;}
-			if(KeyNum==2&&i<=80){i+=10;}
+			if(KeyNum==1&&i>10){i-=10;}
+			if(KeyNum==2&&i<90){i+=10;}
 			PWM_SetCompare1(i);
 		}
 		I=IC_GetDuty();
-		OLED_ShowNum(1,6,IC_GetFreq(),5);
-		OLED_ShowNum(2,9,I,2);
-		OLED_ShowNum(3,9,i,2);
+		OLED_ShowNum(1,6,IC_GetFreq(),6);
+		OLED_ShowNum(2,9,I,3);
+		OLED_ShowNum(3,9,i,3);
 		
 		
 	}

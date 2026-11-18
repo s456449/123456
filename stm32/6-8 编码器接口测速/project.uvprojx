@@ -440,14 +440,14 @@
               <FilePath>.\hardware\OLED_Font.h</FilePath>
             </File>
             <File>
-              <FileName>Enconder.c</FileName>
+              <FileName>Encoder.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\hardware\Enconder.c</FilePath>
+              <FilePath>.\hardware\Encoder.c</FilePath>
             </File>
             <File>
-              <FileName>Enconder.h</FileName>
+              <FileName>Encoder.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\hardware\Enconder.h</FilePath>
+              <FilePath>.\hardware\Encoder.h</FilePath>
             </File>
           </Files>
         </Group>

@@ -1,7 +1,7 @@
 #include "stm32f10x.h"                  // Device header
 #include "Timer.h"
 #include "OLED.h"
-#include "Enconder.h"
+#include "Encoder.h"
 
 short int Speed;
 int main(void)

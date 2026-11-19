@@ -3,7 +3,7 @@
 #include "OLED.h"
 #include "AD.h"
 uint16_t AD0,AD1,AD2,AD3;
-uint16_t V0,V1,V2,V3;
+uint32_t V0,V1,V2,V3;
 int main(void)
 {
 	OLED_Init();

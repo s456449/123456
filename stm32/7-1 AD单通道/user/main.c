@@ -3,7 +3,7 @@
 #include "OLED.h"
 #include "AD.h"
 uint16_t ADValue;
-uint16_t Voltage;
+uint32_t Voltage;
 int main(void)
 {
 	OLED_Init();

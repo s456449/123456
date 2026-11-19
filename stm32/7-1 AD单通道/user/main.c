@@ -3,7 +3,7 @@
 #include "OLED.h"
 #include "AD.h"
 uint16_t ADValue;
-float Voltage;
+uint16_t Voltage;
 int main(void)
 {
 	OLED_Init();
@@ -13,11 +13,11 @@ int main(void)
 	while(1)
 	{
 		ADValue=AD_GetValue();
-		Voltage=(float)ADValue/4095*3.3;
+		Voltage=ADValue*3300/4095;
 		
 		OLED_ShowNum(1,9,ADValue,4);
-		OLED_ShowNum(2,9,Voltage,1);
-		OLED_ShowNum(2,11,(unsigned short int)(Voltage*100)%100,2);
+		OLED_ShowNum(2,9,Voltage/1000,1);
+		OLED_ShowNum(2,11,Voltage%1000/10,2);
 		
 		Delay_ms(100);
 	}

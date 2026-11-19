@@ -1,6 +1,6 @@
 #include "stm32f10x.h"                  // Device header
 
-void Enconder_Init(void)
+void Encoder_Init(void)
 {
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE);
@@ -34,7 +34,7 @@ void Enconder_Init(void)
 	TIM_Cmd(TIM3, ENABLE);
 }
 
-short int Enconder_Get(void)
+short int Encoder_Get(void)
 {
 	int Temp;
 	Temp = TIM_GetCounter(TIM3);
